@@ -1,7 +1,7 @@
-# import sys
+import sys
 # sys.path.insert(1, "./lib") # Adds lib folder in this directory to sys
 
-from .lib import epd2in9b_V2
+from lib import epd2in9b_V2
 
 from PIL import Image, ImageDraw, ImageFont
 
