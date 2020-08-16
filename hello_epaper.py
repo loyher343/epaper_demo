@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 epd = epd2in9b_V2.EPD() #get the display
 epd.init()              #initialize the display
 print("Clear...")       #prints to console, not the display, for debuggin
-epd.Clear(0xFF)         #clear the display
+epd.Clear()         #clear the display
 
 def printToDisplay(string):
     HBlackImage = Image.new('1', (epd2in9b_V2.EPD_HEIGHT, epd2in9b_V2.EPD_WIDTH), 225)
