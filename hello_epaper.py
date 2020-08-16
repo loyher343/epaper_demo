@@ -17,7 +17,7 @@ def printToDisplay(string):
     draw = ImageDraw(HBlackImage) #Create draw object and pass in the image layer we want to work with HBlackImage
     font = ImageFont.truetype('/usr/share/fonts/truetype/google/Bangers-Regular.ttf', 30) #Create our font, passing in the font file and font size
     draw.text((25, 65), string, font = font, fill = 0)
-    epd.display(epd.getbuffer(HBlackImage), epd.getbuff(HRedImage))
+    epd.display(epd.getbuffer(HBlackImage), epd.getbuffer(HRedImage))
 
 def handleBtnPress():
     printToDisplay("Hello, World!!!!")
