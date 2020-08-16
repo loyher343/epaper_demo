@@ -20,6 +20,7 @@ def printToDisplay(string):
     epd.display(epd.getbuffer(HBlackImage), epd.getbuffer(HRedImage))
 
 def handleBtnPress():
-    printToDisplay("Hello, World!!!!")
+    message = input()
+    printToDisplay(message)
 
 handleBtnPress()
