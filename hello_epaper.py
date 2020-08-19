@@ -26,8 +26,8 @@ def getCryptoData():
     response = requests.get('http://api.coincap.io/v2/assets?ids=bitcoin')
     resData = json.loads(response.text)
     data = resData['data'][0]
-    name = data['name']
-    return name
+    cryptoData = data['name'] + ': '+ data['priceUsd']
+    return cryptoData
 
 def handleBtnPress():
     # message = input()
