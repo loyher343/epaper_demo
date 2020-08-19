@@ -2,7 +2,7 @@ import sys
 # sys.path.insert(1, "./lib") # Adds lib folder in this directory to sys
 import requests
 import json
-
+import numpy
 
 from lib import epd2in9b_V2
 
@@ -24,10 +24,13 @@ def printToDisplay(string):
     draw.multiline_text((5, 45), string, font = font, fill = 0, spacing= 4, align="center")
     epd.display(epd.getbuffer(HBlackImage), epd.getbuffer(HRedImage))
 def getCryptoData():
-    response = requests.get('http://api.coincap.io/v2/assets?ids=bitcoin')
+    response = requests.get('http://api.coincap.io/v2/assets?ids=ethereum')
     resData = json.loads(response.text)
     data = resData['data'][0]
-    cryptoData = data['name'] + '/n '+ data['priceUsd']
+    name = data['name']
+    #price = float(round(data['priceUsd'], 2))
+    #    print(isinstance(price, int))
+    cryptoData = name + ': '+ data['priceUsd']
     return cryptoData
 
 def handleBtnPress():
