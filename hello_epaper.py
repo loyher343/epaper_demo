@@ -21,7 +21,7 @@ def printToDisplay(string):
     draw = ImageDraw.Draw(HBlackImage) #Create draw object and pass in the image layer we want to work with HBlackImage
     font = ImageFont.truetype('/usr/share/fonts/Hack-Regular.ttf', 30) #Create our font, passing in the font file and font size
     #draw.text((25, 5), string, font = font, fill = 0)
-    draw.multiline_text(5, 45), string, font = font, fill = 0, spacing= 4, align="center")
+    draw.multiline_text((5, 45), string, font = font, fill = 0, spacing= 4, align="center")
     epd.display(epd.getbuffer(HBlackImage), epd.getbuffer(HRedImage))
 def getCryptoData():
     response = requests.get('http://api.coincap.io/v2/assets?ids=bitcoin')
